@@ -37,6 +37,7 @@ export class BoardComponent implements OnInit {
    * @param idx index of the clicked SquareComponent
    */
   makeMove(idx: number) {
+    if (this.winner) return;
     if (!this.squares[idx]) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
