@@ -1,0 +1,14 @@
+<h1>Current player: {{player.value}}</h1>
+
+<div style="display: flex; margin-bottom: 1rem;">
+  <button nbButton outline status="danger" (click)="newGame()">Start new game</button>
+
+  <p *ngIf="winner" style="padding-left: 1rem;">
+    Player {{winner}} won the game!
+  </p>
+</div>
+<main>
+  <app-square *ngFor="let val of squares; let i = index" [value]="val?.value" (click)="makeMove(i)">
+
+  </app-square>
+</main>
